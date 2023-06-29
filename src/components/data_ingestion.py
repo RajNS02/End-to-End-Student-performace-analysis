@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformationConfig
+from src.components.data_transformation import DataTransformation
+
 @dataclass # Use when we want to define only variables. With this, we can do without all that __init__ bs
 class DataIngestionConfig: # defines where to save the train and test data 
     train_data_path: str = os.path.join("artifacts", "train.csv")
@@ -44,6 +47,9 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e, sys)
         
-if __name__ == "__main__": # Basically run this also whenever if main.py is ran
+if __name__ == "__main__": # By default, __name__ is __main__. So, whenever we run this particular script, the code in it runs.
     obj = DataIngestion("tripadvisor")
-    obj.intitiate_data_ingestion()
+    train_data_path, test_data_path = obj.intitiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    train_df_transformed, test_df_transformed = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
