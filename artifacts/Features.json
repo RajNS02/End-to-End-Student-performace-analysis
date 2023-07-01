@@ -1,0 +1,1 @@
+{"gender": "categorical_feature", "race_ethnicity": "categorical_feature", "parental_level_of_education": "categorical_feature", "lunch": "categorical_feature", "test_preparation_course": "categorical_feature", "math_score": "numerical_feature", "reading_score": "numerical_feature"}

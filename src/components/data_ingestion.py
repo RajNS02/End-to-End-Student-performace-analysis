@@ -47,9 +47,4 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e, sys)
         
-if __name__ == "__main__": # By default, __name__ is __main__. So, whenever we run this particular script, the code in it runs.
-    obj = DataIngestion("tripadvisor")
-    train_data_path, test_data_path = obj.intitiate_data_ingestion()
-
-    data_transformation = DataTransformation()
-    train_df_transformed, test_df_transformed = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+# if __name__ == "__main__": # By default, __name__ is __main__. So, whenever we run this particular script, the code in it runs.
