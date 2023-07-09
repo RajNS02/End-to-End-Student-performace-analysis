@@ -32,7 +32,7 @@ custom_input = pd.DataFrame(custom_input)
 # If custom data is given, then predict:
 if st.button("Predict"):
     preds = predict(custom_input)
-    st.header("Predictions")
+    st.header("Predicted writing score")
     st.dataframe(preds)
 
 # features_dict = {}
@@ -77,5 +77,5 @@ if inputs:
     # features_arr = get_array_representation(inputs)
     inputs = pd.read_csv(inputs)
     preds = predict(inputs)
-    st.header("Predictions")
+    st.header("Predictions for writing score")
     st.dataframe(preds)
