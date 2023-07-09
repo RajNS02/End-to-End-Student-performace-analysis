@@ -13,7 +13,7 @@ with open(options_file_path, "r") as file:
     options = json.load(file)
 
 # App framework
-st.title("Maths marks preditor!")
+st.title("Literature score preditor!")
 st.divider()
 st.header("Enter custom data OR upload csv files:")
 st.divider()
